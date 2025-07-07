@@ -48,6 +48,11 @@ type jokuStruct struct{
 func jokuFn(j joku){
 }
 
+func increment(i *int){
+	// pitää dereference
+	*i++
+}
+
 func main() {
 	var j jokuStruct
 	jokuFn(j)
@@ -57,4 +62,10 @@ func main() {
     fmt.Println("in main:", c.String())
     doUpdateRight(&c)
     fmt.Println("in main:", c.String())
+
+	count := 0
+	fmt.Println(count)
+
+	increment(&count)
+	fmt.Println(count)
 }
